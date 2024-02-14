@@ -2,6 +2,11 @@
 
 public class Generator
 {
+    /// <summary>
+    /// To generate ISBN code for books.
+    /// This method automatically generate ISBN code for book that added
+    /// </summary>
+    /// <returns></returns>
     public static string GenerateISBN13()
     {
         Random rnd = new Random();

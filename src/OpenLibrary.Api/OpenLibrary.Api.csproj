@@ -23,4 +23,8 @@
     <ProjectReference Include="..\OpenLibrary.Service\OpenLibrary.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+
 </Project>

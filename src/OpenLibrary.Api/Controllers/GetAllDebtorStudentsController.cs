@@ -14,6 +14,11 @@ public class GetAllDebtorStudentsController : BaseController
         _studentService = studentService;
     }
 
+    /// <summary>
+    /// To get all debtor students
+    /// </summary>
+    /// <param name="params"></param>
+    /// <returns></returns>
     [HttpGet]
     public async Task<IActionResult> GetAllAsync([FromQuery] PaginationParams @params)
         => Ok(new Response

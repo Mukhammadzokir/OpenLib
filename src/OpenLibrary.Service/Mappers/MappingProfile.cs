@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
 using OpenLibrary.Domain.Entities;
 using OpenLibrary.Service.DTOs.Books;
+using OpenLibrary.Service.DTOs.Logins;
 using OpenLibrary.Service.DTOs.Authors;
 using OpenLibrary.Service.DTOs.Students;
+using OpenLibrary.Service.DTOs.UserCodes;
 using OpenLibrary.Service.DTOs.Publishers;
 using OpenLibrary.Service.DTOs.BookAuthors;
-using OpenLibrary.Service.DTOs.BorrowingRecords;
-using OpenLibrary.Service.DTOs.Logins;
-using OpenLibrary.Service.DTOs.UserCodes;
 using OpenLibrary.Service.DTOs.ReturnedBooks;
+using OpenLibrary.Service.DTOs.BorrowingRecords;
 
 namespace OpenLibrary.Service.Mappers;
 
@@ -31,6 +31,10 @@ public class MappingProfile : Profile
         CreateMap<Student, StudentForUpdateDto>().ReverseMap();
         CreateMap<Student, StudentForCreationDto>().ReverseMap();
 
+        // UserCode
+        CreateMap<UserCode, UserCodeForResultDto>().ReverseMap();   
+        CreateMap<UserCode, UserCodeForCreationDto>().ReverseMap();
+        
         // Publisher
         CreateMap<Publisher, PublisherForResultDto>().ReverseMap();
         CreateMap<Publisher, PublisherForUpdateDto>().ReverseMap();
@@ -41,11 +45,6 @@ public class MappingProfile : Profile
         CreateMap<BookAuthor, BookAuthorForUpdateDto>().ReverseMap();
         CreateMap<BookAuthor, BookAuthorForCreationDto>().ReverseMap();
 
-        // BorrowingRecord
-        CreateMap<BorrowingRecord, BorrowingRecordForResultDto>().ReverseMap();
-        CreateMap<BorrowingRecord, BorrowingRecordForUpdateDto>().ReverseMap();
-        CreateMap<BorrowingRecord, BorrowingRecordForCreationDto>().ReverseMap();
-
         // Login
         CreateMap<LoginForCreationDto, LoginForResultDto>().ReverseMap();
 
@@ -53,8 +52,10 @@ public class MappingProfile : Profile
         CreateMap<ReturnedBook, ReturnedBookForResultDto>().ReverseMap();
         CreateMap<ReturnedBook, ReturnedBookForCreationDto>().ReverseMap();
 
-        // UserCode
-        CreateMap<UserCode, UserCodeForResultDto>().ReverseMap();   
-        CreateMap<UserCode, UserCodeForCreationDto>().ReverseMap();
+        // BorrowingRecord
+        CreateMap<BorrowingRecord, BorrowingRecordForResultDto>().ReverseMap();
+        CreateMap<BorrowingRecord, BorrowingRecordForUpdateDto>().ReverseMap();
+        CreateMap<BorrowingRecord, BorrowingRecordForCreationDto>().ReverseMap();
+
     }
 }

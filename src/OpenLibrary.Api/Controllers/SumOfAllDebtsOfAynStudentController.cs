@@ -1,7 +1,6 @@
 ﻿using OpenLibrary.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 using OpenLibrary.Service.Interfaces;
-using OpenLibrary.Service.Configurations;
 
 namespace OpenLibrary.Api.Controllers;
 
@@ -13,6 +12,12 @@ public class SumOfAllDebtsOfAynStudentController : BaseController
     {
         _studentService = studentService;
     }
+
+    /// <summary>
+    /// To get all debts of ant student by studentId 
+    /// </summary>
+    /// <param name="studentId"></param>
+    /// <returns></returns>
 
     [HttpGet("{studentId}")]
     public async Task<IActionResult> GetAllAsync([FromRoute(Name = "studentId")] long studentId)
