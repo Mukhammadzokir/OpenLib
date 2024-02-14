@@ -15,6 +15,12 @@ public class BorrowingRecordsController : BaseController
         _borrowingRecordService = borrowingRecordService;
     }
 
+    /// <summary>
+    /// To borrow a book by studentId and bookId and mark the returned time. 
+    /// In addition, when book are borrowed, automatically set borrowing date
+    /// </summary>
+    /// <param name="dto"></param>
+    /// <returns></returns>
     [HttpPost]
     public async Task<IActionResult> PostAsync([FromBody] BorrowingRecordForCreationDto dto)
         => Ok(new Response
@@ -24,6 +30,11 @@ public class BorrowingRecordsController : BaseController
             Data = await this._borrowingRecordService.AddAsync(dto)
         });
 
+    /// <summary>
+    /// To get all borrowed books
+    /// </summary>
+    /// <param name="params"></param>
+    /// <returns></returns>
     [HttpGet]
     public async Task<IActionResult> GetAllAsync([FromQuery] PaginationParams @params)
         => Ok(new Response
@@ -33,6 +44,11 @@ public class BorrowingRecordsController : BaseController
             Data = await this._borrowingRecordService.RetrieveAllAsync(@params)
         });
 
+    /// <summary>
+    /// To get any borrowed date by borrowing id
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetAsync([FromRoute(Name = "id")] long id)
         => Ok(new Response
@@ -42,6 +58,12 @@ public class BorrowingRecordsController : BaseController
             Data = await this._borrowingRecordService.RetrieveByIdAsync(id)
         });
 
+    /// <summary>
+    /// To update information of borrowed books
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="dto"></param>
+    /// <returns></returns>
     [HttpPut("{id}")]
     public async Task<IActionResult> PutAsync([FromRoute(Name = "id")] long id, [FromBody] BorrowingRecordForUpdateDto dto)
         => Ok(new Response
@@ -51,6 +73,11 @@ public class BorrowingRecordsController : BaseController
             Data = await this._borrowingRecordService.ModifyAsync(id, dto)
         });
 
+    /// <summary>
+    /// To delete borrowed books by id 
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAsync([FromRoute(Name = "id")] long id)
         => Ok(new Response

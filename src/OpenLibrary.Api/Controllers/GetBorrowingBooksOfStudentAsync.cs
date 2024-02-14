@@ -14,6 +14,12 @@ public class GetBorrowingBooksOfStudentAsync : BaseController
         _studentService = studentService;
     }
 
+    /// <summary>
+    /// To get all borrowed book of any student by student id
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="params"></param>
+    /// <returns></returns>
     [HttpGet("{studentId}")]
     public async Task<IActionResult> GetAsync([FromRoute(Name = "studentId")] long id, [FromQuery] PaginationParams @params)
         => Ok(new Response
