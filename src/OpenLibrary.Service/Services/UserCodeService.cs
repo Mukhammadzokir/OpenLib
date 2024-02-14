@@ -1,13 +1,12 @@
 ﻿using AutoMapper;
-using AutoMapper.QueryableExtensions;
+using OpenLibrary.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using OpenLibrary.Data.IRepositories;
-using OpenLibrary.Domain.Entities;
-using OpenLibrary.Service.Configurations;
-using OpenLibrary.Service.DTOs.UserCodes;
 using OpenLibrary.Service.Exceptions;
 using OpenLibrary.Service.Extensions;
 using OpenLibrary.Service.Interfaces;
+using OpenLibrary.Service.Configurations;
+using OpenLibrary.Service.DTOs.UserCodes;
 
 namespace OpenLibrary.Service.Services;
 

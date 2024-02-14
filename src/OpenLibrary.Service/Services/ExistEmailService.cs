@@ -25,9 +25,9 @@ public class ExistEmailService : IExistEmailService
         IRepository<UserCode> codeRepository)
     {
         _repository = repository;
-        _configuration = configuration;
         _codeRepository = codeRepository;
         _userCodeService = userCodeService;
+        _configuration = configuration.GetSection("Email");
     }
 
     public async Task<ExistEmailEnum> EmailExistance(string email)
