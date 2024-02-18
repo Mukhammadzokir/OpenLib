@@ -12,6 +12,5 @@ public class UserCode : Auditable
 
     [MaxLength(10)]
     public long Code { get; set; }
-
     public DateTime ExpireDate { get; set; }
 }
